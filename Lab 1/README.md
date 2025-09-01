@@ -199,11 +199,11 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 \*\***Include your first attempts at recording the set-up video here.**\*\*
 
-First tried out the snap for the sound to image device (in TestSetUp)
+First tried out the snap for the sound to image device (in TestSetUp in PartD folder)
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
-Next tried out the holding note for the sound to image device (in TestSetUpPart2)
+Next tried out the holding note for the sound to image device (in TestSetUpPart2 in Part D folder)
 
 \*\***Show the follow-up work here.**\*\*
 
