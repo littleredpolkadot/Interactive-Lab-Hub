@@ -199,10 +199,13 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 \*\***Include your first attempts at recording the set-up video here.**\*\*
 
+First tried out the snap for the sound to image device (in folder part D)
+
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
-\*\***Show the follow-up work here.**\*\*
+Next tried out the holding note for the sound to image device (in folder part D)
 
+\*\***Show the follow-up work here.**\*\*
 
 ## Part E. Costume the device
 
@@ -224,7 +227,10 @@ Some concern that are inlfuencing the way I have designed the device is the size
 
 \*\***Take a video of your prototyped interaction.**\*\*
 
+Prototyped interaction videos in respective folder Part F!
+
 \*\***Please indicate who you collaborated with on this Lab.**\*\*
+Collaborated with Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935) in getting feedbacl and discussing ideas
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
 
