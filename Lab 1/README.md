@@ -3,7 +3,8 @@
 # Staging Interaction
 
 \*\***NAME OF COLLABORATOR HERE**\*\*
-Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935)
+Feedback Collaborators: Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935)
+Lab Collaborator: Miraim Alex (mta64)
 
 In the original stage production of Peter Pan, Tinker Bell was represented by a darting light created by a small handheld mirror off-stage, reflecting a little circle of light from a powerful lamp. Tinkerbell communicates her presence through this light to the other characters. See more info [here](https://en.wikipedia.org/wiki/Tinker_Bell). 
 
@@ -230,7 +231,9 @@ Some concern that are inlfuencing the way I have designed the device is the size
 Prototyped interaction videos in respective folder Part F!
 
 \*\***Please indicate who you collaborated with on this Lab.**\*\*
-Collaborated with Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935) in getting feedbacl and discussing ideas
+Collaborated with Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935) in getting feedback 
+Collaborated with Miriam Alex(mta64) on lab
+
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
 
