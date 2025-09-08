@@ -249,6 +249,8 @@ You will be assigned three partners from other groups. Go to their github pages,
 
 \*\***Summarize feedback from your partners here.**\*\*
 
+The odor detector should be subtler (nobody should be able to see the device and your odor) and the morse code light can be more accessible.
+
 ## Make it your own
 
 Do last week’s assignment again, but this time: 
@@ -257,3 +259,40 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+
+Setting: This is a wearable device and thus the setting is anywhere the user goes (it is located on the user's body and always in use)
+Players: The user, any people, animals, external scents in the vicinity
+Activity: The user wears the device which indicates the current user's odor state and other toxic fumes in the area. The default mode of the device is a black screen. THe device vibrates once to indicate no smell, and continually vibrates (in bursts) to indiciate a bad smell. The user will need to check the odor by pressing the 'check my odor' button and thus have control over viewing their odor (green for good smells, yellow for no/minimal smells, and red for bad smells) emitted from their own bodies. If there is a toxic/harmful fumes, the device will immediate turn to purple with danger warning sounds and vibrate continuously to encourage user and others in the vicinity to move away from the toxic fumes. 
+
+Goals:
+- To let the user know if they smell
+- To detect other smells in the vicinity
+- To help those with weaker senses of smell to detect bad odors
+
+Improvements from 1.0: 
+- A default lock screen to prevent others from seeing the device
+- vibrations to subtly notify user to check the device without drawing attention (sound would be alerting others as well!)
+- A usecase to detect toxic external fumes
+- warning sound for the toxic fumes usecase (to truly draw the user's attention)
+
+Storyboards
+
+Scenario #1: Detecting when to re-apply perfume
+<img width="1268" height="832" alt="image" src="https://github.com/user-attachments/assets/77e2560b-cbf5-481e-abb5-ed65f4634446" />
+
+Scenario #2: Detecting when to go and apply de-odorant
+<img width="1205" height="777" alt="image" src="https://github.com/user-attachments/assets/d50e9ea1-87cf-4f33-be38-c580060c29ab" />
+<img width="1173" height="355" alt="image" src="https://github.com/user-attachments/assets/1b8536f4-4fce-4dc7-ae9d-d72e1349a692" />
+
+Scenario #3: Detecting external toxic fumes
+<img width="1159" height="758" alt="image" src="https://github.com/user-attachments/assets/b5b3ddba-2235-407c-ab61-1efba5ecb119" />
+
+Costume:
+<img width="963" height="550" alt="image" src="https://github.com/user-attachments/assets/ea36e3d2-16c8-4aa0-a875-e283c5ae13e5" />
+
+Video: 
+https://drive.google.com/file/d/1ZUJDF5to_Z9oCYyLvx2AgFOqYwZjWrjN/view?usp=sharing 
+
+
+
+
