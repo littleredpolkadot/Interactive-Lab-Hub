@@ -2,7 +2,6 @@
 
 # Staging Interaction
 
-\*\***NAME OF COLLABORATOR HERE**\*\*
 Feedback Collaborators: Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935)
 Lab Collaborator: Miraim Alex (mta64)
 
@@ -168,7 +167,10 @@ Feedback Recieved:
 - If the manner that the device is tracking spending is by tracking the outflows of bank accounts, this may be a large privacy and security issue
 - If anyone in the house can see, that would mean that other peoplem may be able to see the indiviudals spending habits
 
-
+Feedback Collaborators Githubs:
+Miriam Alex: https://github.com/miriam-alex/Interactive-Lab-Hub/tree/Fall2025/Lab%201
+Amanda Lu: https://github.com/amandazlu/Interactive-Lab-Hub/tree/Fall2025/Lab%201
+Yingu Chen: https://github.com/chenyingyu-main/Interactive-Lab-Hub/tree/Fall2025/Lab%201 
 ## Part B. Act out the Interaction
 
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
@@ -223,7 +225,6 @@ Think about the setting of the device: is the environment a place where the devi
 Some concern that are inlfuencing the way I have designed the device is the size of the device. The odor detector should be tinier due to being wearable and also should be designed to be able to securely be on the body of the user (likely as a wristband/arm band). In additon, the morse code communicater is designed to be a smaller desk/night stand lamp with a dimmer setting (a subtle way of commmunication). By comparison the light of the task reminder is supposed to eyegrabbing and a little attacking on the eyes so it should be very bright and thus will be powered by many more watts. 
 
 
-
 ## Part F. Record
 
 \*\***Take a video of your prototyped interaction.**\*\*
@@ -241,7 +242,6 @@ Be generous in acknowledging their contributions! And also recognizing any other
 # Staging Interaction, Part 2 
 
 This describes the second week's work for this lab activity.
-
 
 ## Prep (to be done before Lab on Wednesday)
 
@@ -291,7 +291,13 @@ Costume:
 <img width="963" height="550" alt="image" src="https://github.com/user-attachments/assets/ea36e3d2-16c8-4aa0-a875-e283c5ae13e5" />
 
 Video: 
+Actor: Miriam Alex (mta64)
 https://drive.google.com/file/d/1ZUJDF5to_Z9oCYyLvx2AgFOqYwZjWrjN/view?usp=sharing 
+
+Collaborator Github: https://github.com/miriam-alex/Interactive-Lab-Hub
+Collaborator's Video: https://drive.google.com/file/d/1LiOexhPG1Rbydkl2FI7sCpoWQkL3Qo5D/view?usp=sharing 
+
+
 
 
 
