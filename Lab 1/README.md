@@ -201,9 +201,7 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 First tried out the snap for the sound to image device (in TestSetUp in PartD folder)
 
-Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
-
-Next tried out the holding note for the sound to image device (in TestSetUpPart2 in Part D folder)
+Now, change the goal within the same setting, and update the interaction with the paper prototype. 
 
 \*\***Show the follow-up work here.**\*\*
 
