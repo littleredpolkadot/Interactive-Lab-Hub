@@ -31,8 +31,8 @@ Prior to the lab session on Thursday, taken inventory of the kit parts that you 
 3. ### Prepare your Pi for lab this week
 [Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Thursday.
 
-
-
+Some features/interactions I would like for part 2 is a clock image that changes with the minute hand ( ie it he hand on the clock will change every hour)
+It would also be nice if after every minute or so the screen flashes to signify a minute has passed or after a certain amount of time, the user presses to reset(almost like a stop watch/countdown)
 
 ## Overview
 For this assignment, you are going to 
