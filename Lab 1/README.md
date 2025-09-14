@@ -2,8 +2,8 @@
 
 # Staging Interaction
 
-\*\***NAME OF COLLABORATOR HERE**\*\*
-Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935)
+Feedback Collaborators: Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935)
+Lab Collaborator: Miraim Alex (mta64)
 
 In the original stage production of Peter Pan, Tinker Bell was represented by a darting light created by a small handheld mirror off-stage, reflecting a little circle of light from a powerful lamp. Tinkerbell communicates her presence through this light to the other characters. See more info [here](https://en.wikipedia.org/wiki/Tinker_Bell). 
 
@@ -167,7 +167,10 @@ Feedback Recieved:
 - If the manner that the device is tracking spending is by tracking the outflows of bank accounts, this may be a large privacy and security issue
 - If anyone in the house can see, that would mean that other peoplem may be able to see the indiviudals spending habits
 
-
+Feedback Collaborators Githubs:
+Miriam Alex: https://github.com/miriam-alex/Interactive-Lab-Hub/tree/Fall2025/Lab%201
+Amanda Lu: https://github.com/amandazlu/Interactive-Lab-Hub/tree/Fall2025/Lab%201
+Yingu Chen: https://github.com/chenyingyu-main/Interactive-Lab-Hub/tree/Fall2025/Lab%201 
 ## Part B. Act out the Interaction
 
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
@@ -220,7 +223,6 @@ Think about the setting of the device: is the environment a place where the devi
 Some concern that are inlfuencing the way I have designed the device is the size of the device. The odor detector should be tinier due to being wearable and also should be designed to be able to securely be on the body of the user (likely as a wristband/arm band). In additon, the morse code communicater is designed to be a smaller desk/night stand lamp with a dimmer setting (a subtle way of commmunication). By comparison the light of the task reminder is supposed to eyegrabbing and a little attacking on the eyes so it should be very bright and thus will be powered by many more watts. 
 
 
-
 ## Part F. Record
 
 \*\***Take a video of your prototyped interaction.**\*\*
@@ -228,7 +230,9 @@ Some concern that are inlfuencing the way I have designed the device is the size
 Prototyped interaction videos in respective folder Part F!
 
 \*\***Please indicate who you collaborated with on this Lab.**\*\*
-Collaborated with Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935) in getting feedbacl and discussing ideas
+Collaborated with Miriam Alex (mta64), Amanda Lu (azl8), Ying Yu Chen (yc2935) in getting feedback 
+Collaborated with Miriam Alex(mta64) on lab
+
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
 
@@ -237,12 +241,13 @@ Be generous in acknowledging their contributions! And also recognizing any other
 
 This describes the second week's work for this lab activity.
 
-
 ## Prep (to be done before Lab on Wednesday)
 
 You will be assigned three partners from other groups. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
 
 \*\***Summarize feedback from your partners here.**\*\*
+
+The odor detector should be subtler (nobody should be able to see the device and your odor) and the morse code light can be more accessible.
 
 ## Make it your own
 
@@ -252,3 +257,46 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+
+Setting: This is a wearable device and thus the setting is anywhere the user goes (it is located on the user's body and always in use)
+Players: The user, any people, animals, external scents in the vicinity
+Activity: The user wears the device which indicates the current user's odor state and other toxic fumes in the area. The default mode of the device is a black screen. THe device vibrates once to indicate no smell, and continually vibrates (in bursts) to indiciate a bad smell. The user will need to check the odor by pressing the 'check my odor' button and thus have control over viewing their odor (green for good smells, yellow for no/minimal smells, and red for bad smells) emitted from their own bodies. If there is a toxic/harmful fumes, the device will immediate turn to purple with danger warning sounds and vibrate continuously to encourage user and others in the vicinity to move away from the toxic fumes. 
+
+Goals:
+- To let the user know if they smell
+- To detect other smells in the vicinity
+- To help those with weaker senses of smell to detect bad odors
+
+Improvements from 1.0: 
+- A default lock screen to prevent others from seeing the device
+- vibrations to subtly notify user to check the device without drawing attention (sound would be alerting others as well!)
+- A usecase to detect toxic external fumes
+- warning sound for the toxic fumes usecase (to truly draw the user's attention)
+
+Storyboards
+
+Scenario #1: Detecting when to re-apply perfume
+<img width="1268" height="832" alt="image" src="https://github.com/user-attachments/assets/77e2560b-cbf5-481e-abb5-ed65f4634446" />
+
+Scenario #2: Detecting when to go and apply de-odorant
+<img width="1205" height="777" alt="image" src="https://github.com/user-attachments/assets/d50e9ea1-87cf-4f33-be38-c580060c29ab" />
+<img width="1173" height="355" alt="image" src="https://github.com/user-attachments/assets/1b8536f4-4fce-4dc7-ae9d-d72e1349a692" />
+
+Scenario #3: Detecting external toxic fumes
+<img width="1159" height="758" alt="image" src="https://github.com/user-attachments/assets/b5b3ddba-2235-407c-ab61-1efba5ecb119" />
+
+Costume:
+<img width="963" height="550" alt="image" src="https://github.com/user-attachments/assets/ea36e3d2-16c8-4aa0-a875-e283c5ae13e5" />
+
+Video: 
+Actor: Miriam Alex (mta64)
+https://drive.google.com/file/d/1ZUJDF5to_Z9oCYyLvx2AgFOqYwZjWrjN/view?usp=sharing 
+
+Collaborator Github: https://github.com/miriam-alex/Interactive-Lab-Hub
+Collaborator's Video: https://drive.google.com/file/d/1LiOexhPG1Rbydkl2FI7sCpoWQkL3Qo5D/view?usp=sharing 
+
+
+
+
+
+
