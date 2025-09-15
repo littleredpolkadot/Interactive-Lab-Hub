@@ -1,4 +1,4 @@
-# Interactive Prototyping: The Clock of Pi
+m# Interactive Prototyping: The Clock of Pi
 **NAMES OF COLLABORATORS HERE**
 
 Does it feel like time is moving strangely during this semester?
@@ -216,6 +216,8 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
+<img width="766" height="775" alt="image" src="https://github.com/user-attachments/assets/0597d815-1611-43bd-86fe-c0750d288139" />
+
 
 
 # Prep for Part 2
