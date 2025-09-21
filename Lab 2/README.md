@@ -1,4 +1,4 @@
-# Interactive Prototyping: The Clock of Pi
+m# Interactive Prototyping: The Clock of Pi
 **NAMES OF COLLABORATORS HERE**
 
 Does it feel like time is moving strangely during this semester?
@@ -31,8 +31,8 @@ Prior to the lab session on Thursday, taken inventory of the kit parts that you 
 3. ### Prepare your Pi for lab this week
 [Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Thursday.
 
-
-
+Some features/interactions I would like for part 2 is a clock image that changes with the minute hand ( ie it he hand on the clock will change every hour)
+It would also be nice if after every minute or so the screen flashes to signify a minute has passed or after a certain amount of time, the user presses to reset(almost like a stop watch/countdown)
 
 ## Overview
 For this assignment, you are going to 
@@ -216,6 +216,8 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
+<img width="766" height="775" alt="image" src="https://github.com/user-attachments/assets/0597d815-1611-43bd-86fe-c0750d288139" />
+
 
 
 # Prep for Part 2
