@@ -194,7 +194,7 @@ Can you make time interactive? You can look in `screen_test.py` for examples for
 Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www.billverplank.com/IxDSketchBook.pdf)!
 
 I wanted to make a clock that was composed of people and a way to see time through different poses. 
-I put the verplank diagram is above in part G!
+I put the verplank diagram is above in part G as that is what I brainstormed during the first part of the lab (I did G in the first part of the lab)
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
@@ -222,6 +222,7 @@ I sketched the figures to pose like numbers to give the feel of a group of stick
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
+This was done in part 1 before E and F.
 <img width="766" height="775" alt="image" src="https://github.com/user-attachments/assets/0597d815-1611-43bd-86fe-c0750d288139" />
 
 
@@ -243,4 +244,16 @@ As always, make sure you document contributions and ideas from others explicitly
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
 
+Slightly modified Verplank
+<img width="1399" height="681" alt="image" src="https://github.com/user-attachments/assets/cba5aebb-a9d5-49b4-8348-77e0843e9412" />
+
+The new idea is to have a mini game that the user can use to interact with the clock. By pressing on B, you are in a mini game where the squad who was making up the numbers in your clock now has to run away from the bouncing ball. The number of people running depends on how many people make up your clock. For example 01:00 would be 7 people running because 2 people make up each 0 and 1 person makes up a 1. You will only survive if you squad is small enough. It is a way to interactively tell time not only through the display, but by thinking about what people make up the clock!
+
+Case 1: you have a small enough squad
+
+https://drive.google.com/file/d/1z0qrfNu7nujT9onMWFYkajRUDL-SKEFq/view?usp=sharing 
+
+Case 2: you do not have a small enough squad
+
+https://drive.google.com/file/d/10N0rIl_YQ89o7W_VkK-K5v_JfFxfjRdS/view?usp=sharing
 
