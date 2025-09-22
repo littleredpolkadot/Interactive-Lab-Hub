@@ -253,7 +253,23 @@ Case 1: you have a small enough squad
 
 https://drive.google.com/file/d/1z0qrfNu7nujT9onMWFYkajRUDL-SKEFq/view?usp=sharing 
 
+As seen in the video, the squad size is 4 since the number of people posing for time is 4 which is small enough to not get caught by the ball!
+
 Case 2: you do not have a small enough squad
 
 https://drive.google.com/file/d/10N0rIl_YQ89o7W_VkK-K5v_JfFxfjRdS/view?usp=sharing
+
+As seen in the video, the squad size is 5 since the number of people posing for time is 5 which is not small enough to not get caught by the ball!
+
+Additional Sources:
+Gif credits: 
+- Running Stick Figure: https://tenor.com/9O2r.gif 
+- Bouncing Ball: https://tenor.com/buvHY.gif
+- Pow: https://tenor.com/bPgeW.gif
+- Falling stick figure: https://i.gifer.com/IdWK.gif
+
+Welcome screen and game title: 
+Chat-GPT
+prompt "what to call a clock that tells times by stick figures group posing as numbers, and has a mini game (depending on the number of people making up the time) whether they will survive the boulder or not"
+prompt "can you create a 135 width 240 height welcome screen for the game I described above called Survive Squad O'Clock"
 
