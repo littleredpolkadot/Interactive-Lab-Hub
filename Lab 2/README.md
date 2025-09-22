@@ -193,6 +193,9 @@ Can you make time interactive? You can look in `screen_test.py` for examples for
 
 Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www.billverplank.com/IxDSketchBook.pdf)!
 
+I wanted to make a clock that was composed of people and a way to see time through different poses. 
+I put the verplank diagram is above in part G!
+
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
 
@@ -211,6 +214,9 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 ## Part F. 
 ## Make a short video of your modified barebones PiClock
+I sketched the figures to pose like numbers to give the feel of a group of stick figures posing to tell you the time
+<img width="693" height="695" alt="image" src="https://github.com/user-attachments/assets/2f1a7660-c8a0-4f9a-93fc-79cf2679926c" />
+
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
