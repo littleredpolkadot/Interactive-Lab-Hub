@@ -361,6 +361,7 @@ Write out what you imagine the dialogue to be. Use cards, post-its, or whatever 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+
 [Acting out the dialogue video](https://drive.google.com/file/d/1Sy7go3HnWef96RqTYzi3dYmZG9uQ9RM7/view?usp=sharing)
 > Shreya designed the script, while Ying Yu acted as the user without knowing the script. We discovered that if the rubber duck keeps giving constant feedback, it can actually become a bit annoying, and the user may also be unsure when the interaction should come to an end.
 
@@ -423,6 +424,7 @@ Answer the following:
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
+
 
 
 
