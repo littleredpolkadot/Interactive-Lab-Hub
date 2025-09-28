@@ -1,5 +1,7 @@
 # Chatterboxes
-**NAMES OF COLLABORATORS HERE**
+**NAMES OF COLLABORATORS HERE: [Ying Yu Chen](https://github.com/chenyingyu-main/Interactive-Lab-Hub)** 
+
+
 [![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://www.youtube.com/embed/Q8FWzLMobx0?start=19)
 
 In this lab, we want you to design interaction with a speech-enabled device--something that listens and talks to you. This device can do anything *but* control lights (since we already did that in Lab 1).  First, we want you first to storyboard what you imagine the conversational interaction to be like. Then, you will use wizarding techniques to elicit examples of what people might say, ask, or respond.  We then want you to use the examples collected from at least two other people to inform the redesign of the device.
@@ -8,7 +10,11 @@ We will focus on **audio** as the main modality for interaction to start; these 
 
 ## Prep for Part 1: Get the Latest Content and Pick up Additional Parts 
 
-Please check instructions in [prep.md](prep.md) and complete the setup before class on Wednesday, Sept 23rd.
+✅ Please check instructions in [prep.md](prep.md) and complete the setup before class on Wednesday, Sept 23rd.
+
+<details>
+<summary>Click to toggle contents of Lab3 Prep</summary>
+
 
 ### Pick up Web Camera If You Don't Have One
 
@@ -18,7 +24,7 @@ Students who have not already received a web camera will receive their [Logitech
 
 As always, pull updates from the class Interactive-Lab-Hub to both your Pi and your own GitHub repo. There are 2 ways you can do so:
 
-**\[recommended\]**Option 1: On the Pi, `cd` to your `Interactive-Lab-Hub`, pull the updates from upstream (class lab-hub) and push the updates back to your own GitHub repo. You will need the *personal access token* for this.
+**\[recommended\]** ✅ Option 1: On the Pi, `cd` to your `Interactive-Lab-Hub`, pull the updates from upstream (class lab-hub) and push the updates back to your own GitHub repo. You will need the *personal access token* for this.
 
 ```
 pi@ixe00:~$ cd Interactive-Lab-Hub
@@ -30,10 +36,15 @@ pi@ixe00:~/Interactive-Lab-Hub $ git push
 
 Option 2: On your your own GitHub repo, [create pull request](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2022Fall/readings/Submitting%20Labs.md) to get updates from the class Interactive-Lab-Hub. After you have latest updates online, go on your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull` to get updates from your own GitHub repo.
 
+</details>
+
+
 ## Part 1.
 ### Setup 
+<details>
+<summary>Click to toggle contents of Lab3 Setup (Env and Dependency Installation)</summary>
 
-Activate your virtual environment
+✅ Activate your virtual environment
 
 ```
 pi@ixe00:~$ cd Interactive-Lab-Hub
@@ -43,18 +54,22 @@ pi@ixe00:~/Interactive-Lab-Hub $ source .venv/bin/activate
 (.venv)pi@ixe00:~/Interactive-Lab-Hub $ 
 ```
 
-Run the setup script
+✅ Run the setup script
 ```(.venv)pi@ixe00:~/Interactive-Lab-Hub $ pip install -r requirements.txt  ```
 
-Next, run the setup script to install additional text-to-speech dependencies:
+✅ Next, run the setup script to install additional text-to-speech dependencies:
 ```
 (.venv)pi@ixe00:~/Interactive-Lab-Hub/Lab 3 $ ./setup.sh
 ```
+</details>
+
 
 ### Text to Speech 
 
-In this part of lab, we are going to start peeking into the world of audio on your Pi! 
+✅ In this part of lab, we are going to start peeking into the world of audio on your Pi! 
 
+<details>
+<summary>Click to toggle contents of some testing scripts.</summary>
 We will be using the microphone and speaker on your webcamera. In the directory is a folder called `speech-scripts` containing several shell scripts. `cd` to the folder and list out all the files by `ls`:
 
 ```
@@ -63,13 +78,13 @@ Download        festival_demo.sh  GoogleTTS_demo.sh  pico2text_demo.sh
 espeak_demo.sh  flite_demo.sh     lookdave.wav
 ```
 
-You can run these shell files `.sh` by typing `./filename`, for example, typing `./espeak_demo.sh` and see what happens. Take some time to look at each script and see how it works. You can see a script by typing `cat filename`. For instance:
+✅ You can run these shell files `.sh` by typing `./filename`, for example, typing `./espeak_demo.sh` and see what happens. Take some time to look at each script and see how it works. You can see a script by typing `cat filename`. For instance:
 
 ```
 pi@ixe00:~/speech-scripts $ cat festival_demo.sh 
 #from: https://elinux.org/RPi_Text_to_Speech_(Speech_Synthesis)#Festival_Text_to_Speech
 ```
-You can test the commands by running
+✅ You can test the commands by running
 ```
 echo "Just what do you think you're doing, Dave?" | festival --tts
 ```
@@ -79,11 +94,9 @@ Typically, a `.sh` file is a shell script which you can execute in a terminal. T
 
 You can also play audio files directly with `aplay filename`. Try typing `aplay lookdave.wav`.
 
-\*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
-(This shell file should be saved to your own repo for this lab.)
-
 ---
-Bonus:
+Bonus: [Piper](https://github.com/rhasspy/piper) is another fast neural based text to speech package for raspberry pi.
+
 [Piper](https://github.com/rhasspy/piper) is another fast neural based text to speech package for raspberry pi which can be installed easily through python with:
 ```
 pip install piper-tts
@@ -101,8 +114,39 @@ echo 'This sentence is spoken first. This sentence is synthesized while the firs
   piper --model en_US-lessac-medium --output-raw | \
   aplay -r 22050 -f S16_LE -t raw -
 ```
+</details>
+
+
+\*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
+(This shell file should be saved to your own repo for this lab.)
+
+**REMINDER: Before running any of these scripts, adjust the volume of Pi.**
+The following command can set the volume to 30% or control the volume with `pavucontrol`
+```
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30 
+```
+> Find the code on **speech-scripts/lab3_greet.sh**
+>
+> The following **two videos** demonstrate different Text-to-Speech (TTS) engines. 
+> **Click the image to watch the video.**
+>
+> * The first video shows the output using espeak and pico2wave.
+> * The second video demonstrates speech synthesis with Piper.
+
+<p align="center">
+  <a href="https://youtu.be/3vvfNtMkWso">
+    <img src="https://img.youtube.com/vi/3vvfNtMkWso/0.jpg" alt="Demo 1" height="300">
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://youtu.be/06EkF5N80uc">
+    <img src="https://img.youtube.com/vi/06EkF5N80uc/0.jpg" alt="Demo 2" height="300">
+  </a>
+</p>
+
   
 ### Speech to Text
+<details>
+<summary>Click to toggle contents of Vosk and Whisper</summary>
 
 Next setup speech to text. We are using a speech recognition engine, [Vosk](https://alphacephei.com/vosk/), which is made by researchers at Carnegie Mellon University. Vosk is amazing because it is an offline speech recognition engine; that is, all the processing for the speech recognition is happening onboard the Raspberry Pi. 
 
@@ -145,11 +189,27 @@ and
 ```
 python faster_whisper_try.py
 ```
+
+</details>
+
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
+
+> Find the code on 
+> * **speech-scripts/lab3_ask_number.sh** 
+> * **speech-scripts/lab3_transcribe_number.py**
+>
+> Below are the demo video and the terminal screenshot from my test run.
+> **Click the image to watch the video.**
+
+![zip_code](images/zip_code_test.png)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/l5FmxoiRhJA/0.jpg)](https://youtu.be/l5FmxoiRhJA)
 
 ### 🤖 NEW: AI-Powered Conversations with Ollama
 
 Want to add intelligent conversation capabilities to your voice projects? **Ollama** lets you run AI models locally on your Raspberry Pi for sophisticated dialogue without requiring internet connectivity!
+
+<details>
+<summary>Click to toggle contents of Ollama.</summary>
 
 #### Quick Start with Ollama
 
@@ -177,12 +237,12 @@ pip install -r ollama_requirements.txt
 
 We've created three Ollama integration scripts for different use cases:
 
-**1. Basic Demo** - Learn how Ollama works:
+**1. ✅ Basic Demo** - Learn how Ollama works:
 ```bash
 python3 ollama_demo.py
 ```
 
-**2. Voice Assistant** - Full speech-to-text + AI + text-to-speech:
+**2. ✅ Voice Assistant** - Full speech-to-text + AI + text-to-speech:
 ```bash
 python3 ollama_voice_assistant.py
 ```
@@ -212,9 +272,45 @@ answer = ask_ai("How should I greet users?")
 
 **📖 Complete Setup Guide**: See `OLLAMA_SETUP.md` for detailed instructions, troubleshooting, and advanced usage!
 
+</details>
+
+
 \*\***Try creating a simple voice interaction that combines speech recognition, Ollama processing, and text-to-speech output. Document what you built and how users responded to it.**\*\*
 
+> Find the code on **ollama/lab3_ollama_food.py**
+>
+> The following **videos** is the demo for the Food Recommendation Assistant. 
+> **Click the image to watch the video.**
+
+[![image](https://img.youtube.com/vi/__usS4v8-7I/0.jpg)](https://youtu.be/__usS4v8-7I)
+
+The screenshots below show the conversation logs for both text-to-speech and speech-to-text. Since there are many warnings when running on the Pi, screenshots make the record clearer.
+
+![food1](images/food1.png)
+![food2](images/food2.png)
+
+This flowchart shows the basic workflow of the voice-controlled food recommendation system:
+
+1. Start Program - Initialize the voice assistant
+2. Voice Input - Continuously listen for user speech
+3. Voice Detection - Check if voice input is detected
+  * If no voice detected, continue listening
+  * If voice detected, proceed to next step
+4. Convert to Text - Transform user speech into text
+5. Send to **Ollama AI** - Pass the text to AI for processing
+6. Get Food Suggestions - AI analyzes the request and generates food recommendations
+7. Speak Response - Convert AI suggestions back to speech and play to user
+8. Loop - Return to voice input for next conversation
+
+The system runs in a continuous loop until the user says "quit" to end the program. This follows the typical voice assistant interaction pattern: **Listen → Understand → Process → Respond → Repeat**.
+Below is a simplified flowchart of the process:
+![food2](images/food3.jpeg)
+
+
 ### Serving Pages
+
+<details>
+<summary>Click to toggle contents of webserver.</summary>
 
 In Lab 1, we served a webpage with flask. In this lab, you may find it useful to serve a webpage for the controller on a remote device. Here is a simple example of a webserver.
 
@@ -230,35 +326,49 @@ pi@ixe00:~/Interactive-Lab-Hub/Lab 3 $ python server.py
  * Debugger is active!
  * Debugger PIN: 162-573-883
 ```
-From a remote browser on the same network, check to make sure your webserver is working by going to `http://<YourPiIPAddress>:5000`. You should be able to see "Hello World" on the webpage.
+
+</details>
+
+✅ From a remote browser on the same network, check to make sure your webserver is working by going to `http://<YourPiIPAddress>:5000`. You should be able to see "Hello World" on the webpage.
 
 ### Storyboard
+
+**Collaborate with [Ying Yu Chen](https://github.com/chenyingyu-main/Interactive-Lab-Hub)**
 
 Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.) 
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+<img width="2388" height="2101" alt="storyboard" src="https://github.com/user-attachments/assets/6e44c439-4a5a-442f-9899-0222e7c695d1" />
+
+We want to use the answering functionality to create something like a **software engineer’s rubber duck**. The term rubber duck comes from the idea of rubber duck debugging, where programmers explain their code to a simple object to help them reflect on and debug their work.
+
+The rubber duck **doesn’t solve the problem** for the users. Instead, it prompts users to verbalize their thought process, helping users clarify bugs until they reach the solution themselves.
+
+![IMG_561787F51844-1](https://github.com/user-attachments/assets/9fcdb740-f1fe-4278-808f-990c54dd5f53)
+
+---
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
 
 \*\***Please describe and document your process.**\*\*
 
 <img width="1036" height="728" alt="image" src="https://github.com/user-attachments/assets/95c79ba2-fe15-451f-98bb-c2b18eab62f8" />
 
-When creating the script, we imagine a process that will let the user work through problems themselves. Thus we imagine the scenerios where the duck (which will take the form of a some kind of cute stuffed toy and in this process diagram it is a bear) will offer support to the user thorugh means of lending an ear to their frustration and nudging them to take breaks like a supportive friend.
-
+>When creating the script, we imagine a process that will let the user work through problems themselves. Thus we imagine scenarios where the duck (which will take the form of some kind of cute stuffed toy and in this process diagram it is a bear) will offer support to the user through means of lending an ear to their frustration and nudging them to take breaks like a supportive friend. The most primary form of interaction is the process where a user will repeatedly interact with the duck as a means to work through a problem and while explaining come to a realization themselves.
 
 ### Acting out the dialogue
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
-
 [Acting out the dialogue video](https://drive.google.com/file/d/1Sy7go3HnWef96RqTYzi3dYmZG9uQ9RM7/view?usp=sharing)
+> Shreya designed the script, while Ying Yu acted as the user without knowing the script. We discovered that if the rubber duck keeps giving constant feedback, it can actually become a bit annoying, and the user may also be unsure when the interaction should come to an end.
 
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
 
 \*\***Describe if the dialogue seemed different than what you imagined, or when acted out, when it was wizarded, and how.**\*\*
+> We ran into some issues during this part, especially with Python version compatibility. Because of that, it was difficult for us to properly run the demo and act out the dialogue as intended. We plan to revisit and resolve these technical challenges in Part 2.
 
 # Lab 3 Part 2
 
@@ -313,6 +423,7 @@ Answer the following:
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
+
 
 
 
