@@ -146,7 +146,9 @@ Ying Yu:
 
 Shreya:
 > Code is in speech-scripts/greet_shreya.sh
+> 
 > The script uses GoogleTTS to greet Shreya
+> 
 > [Video](https://drive.google.com/file/d/14bAQtoSJ84QoHgKTpH4GYF070SGiDLXs/view?usp=sharing)
 
 
@@ -214,7 +216,9 @@ Ying Yu:
 
 Shreya:
 > Code is speech-scripts/ask_number_siblings.sh & speech-scripts/ask_num_siblings.py
+> 
 > The code verbally prompts user for the number of siblings, processes the response, and prints it in the terminal
+> 
 > [Video](https://drive.google.com/file/d/1pHRaCt3tzJl87oIlbdMygrmKNYHMUe0M/view?usp=sharing)
 
 ### 🤖 NEW: AI-Powered Conversations with Ollama
@@ -437,6 +441,7 @@ Answer the following:
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
+
 
 
 
