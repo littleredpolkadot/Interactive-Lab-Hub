@@ -220,6 +220,10 @@ Shreya:
 > The code verbally prompts user for the number of siblings, processes the response, and prints it in the terminal
 > 
 > [Video](https://drive.google.com/file/d/1pHRaCt3tzJl87oIlbdMygrmKNYHMUe0M/view?usp=sharing)
+> 
+> As shown in the video, the number one is printed in the terminal as the user responded with a one
+> <img width="1403" height="195" alt="image" src="https://github.com/user-attachments/assets/bebee056-1a0a-4b45-bca8-5418fc6bddc2" />
+
 
 ### 🤖 NEW: AI-Powered Conversations with Ollama
 
@@ -441,6 +445,7 @@ Answer the following:
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
+
 
 
 
