@@ -4,134 +4,152 @@ import queue
 import sys
 import time
 import json
+import threading
 import sounddevice as sd
 from vosk import Model, KaldiRecognizer
 from gtts import gTTS
-import playsound
+import simpleaudio as sa
 import qwiic_button
-import threading
 
 # ----------------
-# Setup Vosk & Bear
+# Setup
 # ----------------
 model_path = "/home/pi/Interactive-Lab-Hub/Lab 3/ollama/DebugBear/vosk-models/vosk-model-small-en-us-0.15"
 model = Model(model_path)
 
 audio_queue = queue.Queue()
-interaction_active = False  # tracks if bear session is active
-recording = False           # tracks if user is recording
-buffer_queue = queue.Queue()  # temporary buffer for recording
+interaction_active = False
+awaiting_problem_trigger = False
+awaiting_solution_feedback = False
 
+# ----------------
+# Speak
+# ----------------
 def speak(text):
     tts = gTTS(text=text, lang="en")
-    filename = "/tmp/temp.mp3"
-    tts.save(filename)
-    playsound.playsound(filename)
+    tts.save("/tmp/temp.mp3")
+    os.system("ffmpeg -y -i /tmp/temp.mp3 /tmp/temp.wav >/dev/null 2>&1")
+    wave_obj = sa.WaveObject.from_wave_file("/tmp/temp.wav")
+    play_obj = wave_obj.play()
+    play_obj.wait_done()
 
-def callback(indata, frames, time_info, status):
+# ----------------
+# Audio callback
+# ----------------
+def callback(indata, frames, time, status):
     if status:
         print(status, file=sys.stderr)
-    if recording:
-        buffer_queue.put(bytes(indata))  # only store audio when recording
+    audio_queue.put(bytes(indata))
 
 # ----------------
-# Bear Dialogue Logic
+# Process audio (called after button release)
 # ----------------
-def bear_dialogue_from_buffer():
-    global interaction_active
-    interaction_active = True
-    # Combine all buffered audio into a single processing
+def process_audio():
+    global interaction_active, awaiting_problem_trigger, awaiting_solution_feedback
+
+    print("Processing recording...")
     combined_audio = b""
-    while not buffer_queue.empty():
-        combined_audio += buffer_queue.get()
-    
-    # Feed combined audio to recognizer
-    if rec.AcceptWaveform(combined_audio):
-        result = json.loads(rec.Result())
-        text = result.get("text", "").lower()
-        print("User (button recorded):", text)
-        # Process same as normal dialogue
-        if "yes" in text or "again" in text:
-            speak("That's great! Let's try again, be more detailed and walk through every step.")
-        elif "no" in text or "stop" in text:
-            speak("Stopping the interaction. I'll reset.")
-            interaction_active = False
-            return
-        elif "figured" in text or "got it" in text:
-            speak("That's great that you figured it out! I'm glad I could help!")
-            interaction_active = False
-            return
+    while not audio_queue.empty():
+        combined_audio += audio_queue.get()
 
-    # Start regular bear dialogue after processed message
-    speak("Alright, let's walk things through. Why don't you tell me what's wrong?")
-    while interaction_active:
-        data = audio_queue.get()
-        if rec.AcceptWaveform(data):
-            result = json.loads(rec.Result())
-            text = result.get("text", "").lower()
-            print("User:", text)
-            if "yes" in text or "again" in text:
-                speak("That's great! Let's try again, be more detailed and walk through every step.")
-            elif "no" in text or "stop" in text:
-                speak("Stopping the interaction. I'll reset.")
-                interaction_active = False
-            elif "figured" in text or "got it" in text:
-                speak("That's great that you figured it out! I'm glad I could help!")
-                interaction_active = False
+    if not combined_audio:
+        print("No audio captured")
+        return
+
+    rec = KaldiRecognizer(model, 16000)
+    rec.AcceptWaveform(combined_audio)
+    result_json = rec.Result()
+    result = json.loads(result_json)
+    text = result.get("text", "").lower()
+    print("User said:", text)
+
+    response = ""  # always define a response
+
+    # --- Interaction logic ---
+    if not interaction_active:
+        if any(word in text for word in ["hi", "hello"]):
+            response = "Hi, what do you need help with?"
+            interaction_active = True
+            awaiting_problem_trigger = True
+        else:
+            response = "I only respond to 'hi' or 'hello'."
+    elif awaiting_problem_trigger:
+        if any(word in text for word in ["problem", "issue", "coding", "bug"]):
+            response = "Alright, let's walk through your problem and solution."
+            awaiting_problem_trigger = False
+            awaiting_solution_feedback = True
+        else:
+            response = "I am not equipped for that, sorry."
+            interaction_active = False
+    elif awaiting_solution_feedback:
+        if any(word in text for word in ["figured", "got it", "understand now"]):
+            response = "I am glad that you figured it out!"
+            interaction_active = False
+            awaiting_solution_feedback = False
+        elif any(word in text for word in ["no", "nah"]):
+            response = "I am sorry you couldn't figure it out."
+            interaction_active = False
+            awaiting_solution_feedback = False
+        elif any(word in text for word in ["yes", "again"]):
+            response = "That's great! Let's try again, be more detailed and walk through every step."
+
+    # speak immediately after processing
+    if response:
+        speak(response)
 
 # ----------------
-# Qwiic Button Logic
+# Button handling
 # ----------------
+recording = False
+last_state = False
+
 def run_buttons():
-    global recording, interaction_active
-    button_record = qwiic_button.QwiicButton(address=0x6F)  # Start / Record
-    button_end = qwiic_button.QwiicButton(address=0x5B)     # End / Reset
+    global recording
+    button_record = qwiic_button.QwiicButton(address=0x6F)
+    button_end = qwiic_button.QwiicButton(address=0x5B)
 
     if not button_record.begin():
-        print("Button 1 (record) not connected.", file=sys.stderr)
+        print("Button 1 not connected.", file=sys.stderr)
     if not button_end.begin():
-        print("Button 2 (end/reset) not connected.", file=sys.stderr)
+        print("Button 2 not connected.", file=sys.stderr)
 
-    print("Buttons ready! Button 1 = Record toggle, Button 2 = End/Reset")
+    print("Buttons ready! Button 1 = Start/Stop, Button 2 = Stop interaction")
 
     while True:
-        # Toggle recording with Button 1
-        if button_record.is_button_pressed():
-            recording = not recording
-            button_record.LED_on(recording)
-            print(f"Button 1 pressed: Recording {'started' if recording else 'stopped'}")
-            
-            # If just stopped recording, process the buffer
-            if not recording:
-                threading.Thread(target=bear_dialogue_from_buffer, daemon=True).start()
-            
-            while button_record.is_button_pressed():
-                time.sleep(0.02)
+        pressed = button_record.is_button_pressed()
 
-        # Stop any active interaction with Button 2
-        if button_end.is_button_pressed() and interaction_active:
-            print("Button 2 pressed: Stopping bear interaction")
+        # Toggle recording on single press
+        if pressed and not last_state:
+            if not recording:
+                print("Button 1 pressed: Recording started")
+                button_record.LED_on(True)
+                recording = True
+            else:
+                print("Button 1 pressed: Recording stopped")
+                button_record.LED_on(False)
+                recording = False
+                process_audio()  # process immediately
+
+        last_state = pressed
+
+        if button_end.is_button_pressed():
+            print("Button 2 pressed: Stopping interaction")
+            global interaction_active, awaiting_problem_trigger, awaiting_solution_feedback
             interaction_active = False
-            button_record.LED_on(False)  # ensure LED off
-            recording = False
+            awaiting_problem_trigger = False
+            awaiting_solution_feedback = False
             while button_end.is_button_pressed():
                 time.sleep(0.02)
-        
+
         time.sleep(0.05)
 
 # ----------------
-# Start Vosk and Buttons
+# Main
 # ----------------
 with sd.RawInputStream(samplerate=16000, blocksize=8000, dtype="int16",
                        channels=1, callback=callback):
-    rec = KaldiRecognizer(model, 16000)
-    last_empty = 0
-    print("DebugBear is listening... Press the record button to start interaction.")
-
-    # Run button logic in a separate thread
     threading.Thread(target=run_buttons, daemon=True).start()
+    print("DebugBear listening. Press Button 1 to start/stop recording.")
 
     while True:
-        data = audio_queue.get()
-        audio_queue.put(data)  # store in main queue for ongoing dialogue
-        time.sleep(0.01)
+        time.sleep(0.1)
