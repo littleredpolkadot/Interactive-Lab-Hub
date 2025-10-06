@@ -20,6 +20,7 @@ model = Model(model_path)
 audio_queue = queue.Queue()
 interaction_active = False
 awaiting_problem_trigger = False
+awaiting_walkthrough_recording = False
 awaiting_solution_feedback = False
 
 # ----------------
@@ -45,7 +46,7 @@ def callback(indata, frames, time, status):
 # Process audio (called after button release)
 # ----------------
 def process_audio():
-    global interaction_active, awaiting_problem_trigger, awaiting_solution_feedback
+    global interaction_active, awaiting_problem_trigger, awaiting_walkthrough_recording, awaiting_solution_feedback
 
     print("Processing recording...")
     combined_audio = b""
@@ -63,37 +64,48 @@ def process_audio():
     text = result.get("text", "").lower()
     print("User said:", text)
 
-    response = ""  # always define a response
+    response = ""
 
     # --- Interaction logic ---
     if not interaction_active:
-        if any(word in text for word in ["hi", "hello"]):
-            response = "Hi, what do you need help with?"
+        if any(word in text for word in ["hi", "hello", "hey", "yo", "greetings", "good morning", "good afternoon", "good evening"]):
+            response = "Hello there! what is it that you need help with?"
             interaction_active = True
             awaiting_problem_trigger = True
         else:
-            response = "I only respond to 'hi' or 'hello'."
+            response = "Hello there! I only respond to nice greetings, please greet me"
+
     elif awaiting_problem_trigger:
-        if any(word in text for word in ["problem", "issue", "coding", "bug"]):
-            response = "Alright, let's walk through your problem and solution."
+        if any(word in text for word in ["problem", "issue", "coding", "bug", "leetcode","homework", "assigment", "project"]):
+            # Step 1: announce walkthrough
+            response = "Alright, let's walk through your problem and solution, try and be as detailed as possible. Walking through your process will help you understand better."
             awaiting_problem_trigger = False
-            awaiting_solution_feedback = True
+            awaiting_walkthrough_recording = True
         else:
             response = "I am not equipped for that, sorry."
             interaction_active = False
+
+    elif awaiting_walkthrough_recording:
+        # Step 2: after user finishes recording their walkthrough
+        response = "Thanks for walking through that with me. Did that help? Do you want to do it again?"
+        awaiting_walkthrough_recording = False
+        awaiting_solution_feedback = True
+
     elif awaiting_solution_feedback:
-        if any(word in text for word in ["figured", "got it", "understand now"]):
-            response = "I am glad that you figured it out!"
+        if any(word in text for word in ["figured", "got it", "understand now", "solved it", "finished"]):
+            response = "Yay! Glad that I could help and that you figured it out!"
             interaction_active = False
             awaiting_solution_feedback = False
         elif any(word in text for word in ["no", "nah"]):
-            response = "I am sorry you couldn't figure it out."
+            response = "I am sorry I couldn't help you more. Maybe try asking a friend or teacher for help?"
             interaction_active = False
             awaiting_solution_feedback = False
         elif any(word in text for word in ["yes", "again"]):
-            response = "That's great! Let's try again, be more detailed and walk through every step."
+            response = "That's great! Let's try again, press record and walk me through your process once more."
+            awaiting_walkthrough_recording = True
+            awaiting_solution_feedback = False
 
-    # speak immediately after processing
+
     if response:
         speak(response)
 
@@ -105,8 +117,8 @@ last_state = False
 
 def run_buttons():
     global recording
-    button_record = qwiic_button.QwiicButton(address=0x6F)
-    button_end = qwiic_button.QwiicButton(address=0x5B)
+    button_record = qwiic_button.QwiicButton(address=0x6F)  # red button
+    button_end = qwiic_button.QwiicButton(address=0x5E)     # green button
 
     if not button_record.begin():
         print("Button 1 not connected.", file=sys.stderr)
@@ -132,14 +144,14 @@ def run_buttons():
 
         last_state = pressed
 
+        # --- Green button: immediate exit ---
         if button_end.is_button_pressed():
-            print("Button 2 pressed: Stopping interaction")
-            global interaction_active, awaiting_problem_trigger, awaiting_solution_feedback
-            interaction_active = False
-            awaiting_problem_trigger = False
-            awaiting_solution_feedback = False
-            while button_end.is_button_pressed():
-                time.sleep(0.02)
+            print("Button 2 pressed: Exiting program")
+            button_end.LED_on(True)  # light up briefly
+            speak("Im sorry... Good bye")
+            time.sleep(0.3)  # brief light
+            button_end.LED_on(False)
+            os._exit(0)  # halt program immediately
 
         time.sleep(0.05)
 
