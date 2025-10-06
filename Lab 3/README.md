@@ -408,9 +408,10 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 > We plan to include **two physical buttons with LED indicators** to make the interaction clearer. One is a **recording button**, which lights up while recording to show that the bear is “listening.” The other is a **OFF button** that allows the user to manually deactivate the bear at any time. These physical controls help users easily understand the system’s current state and reduce confusion during interaction.
 
 3. Make a new storyboard, diagram and/or script based on these reflections.
-![IMG_561787F51844-1](images/diagram2.jpg)
-![IMG_561787F51844-1](images/story2.jpg)
-![script](images/script2.jpeg)
+<img width="969" height="633" alt="image" src="https://github.com/user-attachments/assets/a49d2624-c3e4-4658-9e18-74ac98290464" />
+<img width="974" height="720" alt="image" src="https://github.com/user-attachments/assets/3af52e0a-8659-49b1-b663-57a1a8d519d9" />
+<img width="977" height="687" alt="image" src="https://github.com/user-attachments/assets/e3b23874-8538-43a7-9ec8-f1502c6697a5" />
+
 
 
 ## Prototype your system
@@ -425,11 +426,11 @@ The system should:
 *Include videos or screencaptures of both the system and the controller.* -->
 
 **Controller Logic Flowchart:**
-![control](images/control.jpg)
+<img width="999" height="515" alt="image" src="https://github.com/user-attachments/assets/2d2b8ed1-448b-48ba-b857-b4436ffd988d" />
 The start and end of recording are controlled by buttons. Depending on the user’s current task (greeting, describing the problem, or responding whether the interaction was helpful and should continue), the system decides whether to loop back for another recording or end the session.
 
 **System Setup Overview – Wizard Side:**
-![system](images/system.jpeg)
+<img width="1003" height="644" alt="image" src="https://github.com/user-attachments/assets/8df3864a-34c1-4fab-b38e-38ef62a4527a" />
 
 
 **Testing with Users (Video):**
@@ -484,6 +485,7 @@ Try to get at least two people to interact with your system. (Ideally, you would
 > The system could be used to collect **a dataset of user speech and corresponding keyword detections**, helping analyze how people describe their thought processes while debugging or problem-solving.
 >
 > In the future, adding additional sensing modalities such as a camera or touch sensors could help detect user engagement — for example, **facial expressions, hesitation, or physical interaction with the bear (petting)** — providing richer data for training a more autonomous conversational model.
+
 
 
 
