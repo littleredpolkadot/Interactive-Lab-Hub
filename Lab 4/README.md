@@ -55,7 +55,10 @@
 ---
 
 ## Lab Overview
-**Collaboraters:** Ying Yu Chen (yc2935), Shreya Kethy Reddy (sk2683)
+**Collaboraters:** 
+[Amanda Lu](https://github.com/amandazlu/Interactive-Lab-Hub/Fall2025/Lab%204/README.md) 
+[Ying Yu Chen](https://github.com/chenyingyu-main/Interactive-Lab-Hub/Fall2025/Lab%204/README.md)
+
 
 For lab this week, we focus both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed. 
 
@@ -175,14 +178,6 @@ Twizzler 6 touched!
 ```
 </details>
 
-> For part A, I didn’t modify the code — I just experimented with different setups :)
->
-> I ran the code and touched the sensor with my bare hand.
-> 
-> I also tried connecting the sensor using an alligator clip (channel 7). BTW, the paper towel is damp so that it can conduct electricity.
-
-![cap1](images/cap1.JPG)
-![cap2](images/cap2.JPG)
 
 ### Part B
 #### More sensors
@@ -210,23 +205,6 @@ Connect it to your pi with Qwiic connector and try running the three example scr
 You can go the the [Adafruit GitHub Page](https://github.com/adafruit/Adafruit_CircuitPython_APDS9960) to see more examples for this sensor!
 </details>
 
-> **Test Proximity:** higher values indicating that something is close to the sensor. (from Adafruit GitHub Page) 🎥 Watch the video below.
-> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/WFwUsQmDPsw/0.jpg)](https://youtu.be/WFwUsQmDPsw)
-
-> **Test Gesture:** The sensor was a bit less responsive than expected. 🎥 See the testing video below.
-> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8LWAxlkJQjM/0.jpg)](https://youtu.be/8LWAxlkJQjM)
-
-> **Test Color:** To verify the detected color, I added the following lines of code to display the RGB values. (Code can be found here: **color_test.py**)
-> ```
-> red = int((r / c) * 255)
-> green = int((g / c) * 255)
-> blue = int((b / c) * 255)
-> print(red, green, blue)
->```
-> Based on the RGB values, I looked up the corresponding color on a [website](https://htmlcolorcodes.com/). The following photos show the test results.
-> ![color](images/color1.JPG)
-> ![color](images/color2.JPG)
-
 **Reference:**
 * Color Code Website: https://htmlcolorcodes.com/
 
@@ -251,9 +229,6 @@ Connect it to your pi with Qwiic connector and try running the example script, i
 You can go to the [Adafruit Learn Page](https://learn.adafruit.com/adafruit-i2c-qt-rotary-encoder/python-circuitpython) to learn more about the sensor! The sensor actually comes with an LED (neo pixel): Can you try lighting it up? 
 </details>
 
-> I realized soldering wasn't necessary for this setup :) 🎥 The testing video is shown below.
-> 
-> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/eFCc-bMzxYs/0.jpg)](https://youtu.be/eFCc-bMzxYs)
 
 #### Joystick 
 <details> <summary>Instructions</summary>  
@@ -273,10 +248,6 @@ Connect it to your pi with Qwiic connector and try running the example script to
 You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joystick_Py) to learn more about the sensor!
 </details>
 
-> 🎥 See the tesing video down below.
-> 
-> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nPrkx-3D8Xk/0.jpg)](https://youtu.be/nPrkx-3D8Xk)
-
 #### Distance Sensor
 <details> <summary>Instructions</summary>  
 
@@ -295,10 +266,6 @@ Connect it to your pi with Qwiic connector and try running the example script to
 
 You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Proximity_Py) to learn more about the sensor and see other examples
 </details> 
-
-> The detection range of the SparkFun proximity sensor is indeed wider, as shown in the testing video below. 🎥 
->
-> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xmkhN6yoABM/0.jpg)](https://youtu.be/xmkhN6yoABM)
 
 ### Part C
 #### Physical considerations for sensing
