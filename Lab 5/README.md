@@ -318,13 +318,13 @@ Our code is located in pose.py in this repo
 [Finished Result](https://drive.google.com/file/d/1o0Ycdml96MYCBr1kI-ZU8dp1WC1mBWdv/view?usp=sharing)
 
 Feedback
-> The prototype seems to shake a lot when moving and it is a little jarring to see, it would be great if there was a way to smooth out the motion 
-> One way this can be used is in an art installiation using the same priciples to create cool shadow art
-> It is difficult to see yourself since you have to stand a little far away from the camera
-> There are sometimes some hallucinations where the arms move without the user moving
+> - The prototype seems to shake a lot when moving and it is a little jarring to see, it would be great if there was a way to smooth out the motion 
+> - One way this can be used is in an art installiation using the same priciples to create cool shadow art
+> - It is difficult to see yourself since you have to stand a little far away from the camera
+> - There are sometimes some hallucinations where the arms move without the user moving
 
 Reflections:
-> A couple ways that we could expand on this is to add motion to the legs and head, we wanted to add legs as well, but we ended up lacking servos to do so!
-> We wanted to also have the user be able to add little costumes to the figure so that there can be customization of the shadow figures and how it looks
-> To address the concerns about the hallucinations, and smoothing, we would take another look at our code to try and smooth the motion of the arms and look at the updating of the position of the arm
-> To address concerns about the visual being too small, we were thinking we could plug the pi into a larger montior instead or move the camera so that instead of resting on the laptop to rest upon a different structure much further back
+> - A couple ways that we could expand on this is to add motion to the legs and head, we wanted to add legs as well, but we ended up lacking servos to do so!
+> - We wanted to also have the user be able to add little costumes to the figure so that there can be customization of the shadow figures and how it looks
+> - To address the concerns about the hallucinations, and smoothing, we would take another look at our code to try and smooth the motion of the arms and look at the updating of the position of the arm
+> - To address concerns about the visual being too small, we were thinking we could plug the pi into a larger montior instead or move the camera so that instead of resting on the laptop to rest upon a different structure much further back
