@@ -12,8 +12,8 @@ This lab will help you think through the design of observant systems, particular
 
 ## Prep
 
-1.  Install VNC on your laptop if you have not yet done so. This lab will actually require you to run script on your Pi through VNC so that you can see the video stream. Please refer to the [prep for Lab 2](https://github.com/FAR-Lab/Interactive-Lab-Hub/blob/-/Lab%202/prep.md#using-vnc-to-see-your-pi-desktop).
-2.  Install the dependencies as described in the [prep document](prep.md). 
+1. ✅ Install VNC on your laptop if you have not yet done so. This lab will actually require you to run script on your Pi through VNC so that you can see the video stream. Please refer to the [prep for Lab 2](https://github.com/FAR-Lab/Interactive-Lab-Hub/blob/-/Lab%202/prep.md#using-vnc-to-see-your-pi-desktop).
+2. ✅ Install the dependencies as described in the [prep document](prep.md). 
 3.  Read about [OpenCV](https://opencv.org/about/),[Pytorch](https://pytorch.org/), [MediaPipe](https://mediapipe.dev/), and [TeachableMachines](https://teachablemachine.withgoogle.com/).
 4.  Read Belloti, et al.'s [Making Sense of Sensing Systems: Five Questions for Designers and Researchers](https://www.cc.gatech.edu/~keith/pubs/chi2002-sensing.pdf).
 
@@ -43,11 +43,9 @@ D) [Reflect](#part-d)
 ### Part A
 ### Play with different sense-making algorithms.
 
-<details>
-<summary>Show Instructions</summary>
-  
 #### Pytorch for object recognition
 
+<details>
 For this first demo, you will be using PyTorch and running a MobileNet v2 classification model in real time (30 fps+) on the CPU. We will be following steps adapted from [this tutorial](https://pytorch.org/tutorials/intermediate/realtime_rpi.html).
 
 ![torch](Readme_files/pyt.gif)
@@ -75,16 +73,30 @@ The first 2 inferences will be slower. Now, you can try placing several objects 
 
 Read the `infer.py` script and become familiar with the code. You can change the video resolution and frames per second (FPS). You may also use the weights of the larger pre-trained mobilenet_v3_large model, as described [here](https://pytorch.org/tutorials/intermediate/realtime_rpi.html#model-choices).
 
+</details>
+
+![image](images/pytorch.png)
+
+> We tested our model on a coffee cup from Cornell Café. As shown in the terminal output, it detected objects like cups and coffee mugs. Yet, the model didn’t perform very well — it also produced several completely unrelated predictions.
+
 #### More classes
+
+<details>
 
 [PyTorch supports transfer learning](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html), so you can fine‑tune and transfer learn models to recognize your own objects. It requires extra steps, so we won't cover it here.
 
 For more details on transfer learning and deployment to embedded devices, see Deep Learning on Embedded Systems: A Hands‑On Approach Using Jetson Nano and Raspberry Pi (Tariq M. Arif). [Chapter 10](https://onlinelibrary.wiley.com/doi/10.1002/9781394269297.ch10) covers transfer learning for object detection on desktop, and [Chapter 15](https://onlinelibrary.wiley.com/doi/10.1002/9781394269297.ch15) describes moving models to the Pi using ONNX.
 
+</details>
+
+---
+
 ### Machine Vision With Other Tools
 The following sections describe tools ([MediaPipe](#mediapipe) and [Teachable Machines](#teachable-machines)).
 
 #### MediaPipe
+
+<details>
 
 A established open source and efficient method of extracting information from video streams comes out of Google's [MediaPipe](https://mediapipe.dev/), which offers state of the art face, face mesh, hand pose, and body pose detection.
 
@@ -107,9 +119,17 @@ Consider how you might use this position based approach to create an interaction
 
 (You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
 
+</details>
+
+> We tried running the script (see the demo video below). It turned out to be quite accurate; the model was able to identify the points on the hand even when it rotated.
+
+* [Testing Video from Amanda](https://youtu.be/EOdf198vDdk)
+* [Another Testing Video](https://youtube.com/shorts/Flvvdf97vMM)
 
 
 #### Moondream Vision-Language Model
+
+<details>
 
 [Moondream](https://www.ollama.com/library/moondream) is a lightweight vision-language model that can understand and answer questions about images. Unlike the classification models above, Moondream can describe images in natural language and answer specific questions about what it sees.
 
@@ -127,7 +147,17 @@ This will capture an image from your webcam and let you ask questions about it i
 
 **Design consideration**: Think about how slower response times change your interaction design. What kinds of observant systems benefit from thoughtful, delayed responses rather than real-time classification? Consider systems that monitor over longer time periods or provide periodic summaries rather than instant feedback.
 
+</details>
+
+![imaegs](images/dream.png)
+
+> The model responds quickly, its answers are sometimes off-topic (see the image above).
+
+
 #### Teachable Machines
+
+<details>
+
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) is very useful for prototyping with the capabilities of machine learning. We are using [a python package](https://github.com/MeqdadDev/teachable-machine-lite) with tensorflow lite to simplify the deployment process.
 
 ![Tachable Machines Pi](Readme_files/tml_pi.gif)
@@ -149,31 +179,35 @@ Next train your own model. Visit [TeachableMachines](https://teachablemachine.wi
 
 Include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.
 
+</details>
+
+
+<table>
+<tr>
+<td width="30%"><img src="images/Teachable1.png" width="100%"/></td>
+<td width="30%"><img src="images/Teachable2.png" width="100%"/></td>
+<td width="30%"><img src="images/Teachable3.png" width="100%"/></td>
+</tr>
+</table>
+
+> In this experiment, we collected facial images of our four team members (multi-angle) (shown on the left). We then trained a face recognition model using these images (middle) and tested whether the model could correctly identify each person (right).
+>
+> Interestingly, we found that wearing glasses didn’t significantly affect recognition accuracy (the model was still able to recognize Shreya correctly in both cases anyway :).
+
+* [Testing Video from Amanda](https://youtu.be/BHHur6Tpn5U)
+
 #### (Optional) Legacy audio and computer vision observation approaches
+
+<details>
+
 In an earlier version of this class students experimented with observing through audio cues. Find the material here:
 [Audio_optional/audio.md](Audio_optional/audio.md). 
 Teachable machines provides an audio classifier too. If you want to use audio classification this is our suggested method. 
 
 In an earlier version of this class students experimented with foundational computer vision techniques such as face and flow detection. Techniques like these can be sufficient, more performant, and allow non discrete classification. Find the material here:
 [CV_optional/cv.md](CV_optional/cv.md).
+
 </details>
-
-#### Pytorch for object recognition
-
-#### MediaPipe
-[Video](https://drive.google.com/file/d/183Ai6g_7RC0FEAljpmUj8FI_ZzhLRPVS/view?usp=sharing)
-
-### Moondream
-
-#### Teachable Machines
-
-<img width="1156" height="889" alt="Screenshot 2025-10-22 at 4 52 26 PM" src="https://github.com/user-attachments/assets/9863ae12-1f25-4bbd-997a-7ea0413d7f29" />
-
-<img width="1105" height="858" alt="Screenshot 2025-10-22 at 4 53 30 PM" src="https://github.com/user-attachments/assets/aa7236e5-9071-47ae-bbbe-24dc0549e0dd" />
-
-<img width="1101" height="857" alt="Screenshot 2025-10-22 at 5 03 19 PM" src="https://github.com/user-attachments/assets/d98fa3f9-e1c0-4517-ad97-43d6c2b9b356" />
-
-[Video](https://drive.google.com/file/d/1M_-BlMXl1Mv6m4IyMjAdZQcgdLIAejxe/view?usp=sharing)
 
 ### Part B
 ### Construct a simple interaction.
@@ -182,8 +216,46 @@ In an earlier version of this class students experimented with foundational comp
 * This can be as simple as the boat detector shown in lecture.
 * Try out different interaction outputs and inputs.
 
-
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
+
+**1️⃣ Idea and Interaction Intro:** 
+>We constructed a simple interaction using Raspberry Pi and **MediaPipe** to detect upper-body poses and map them to servo motor movements. The idea is to let a small robot (servo) **mimic the user’s arm motions in real-time**.
+>
+> We chose this interaction because it has the potential to be extended into many different applications. For example, it could be used for gesture control in games, full-body tracking for a small humanoid robot, or interactive experiences like mirroring challenges and “Just Dance”-style games.
+>
+> But still, in this lab, we are testing our idea :) We will cover arm detection and make the servo move.
+
+**2️⃣ Model / Mechanism:**
+> For part 1, we tried mapping one arm first to ensure the servo response for experiment.
+> 
+> The model returns the **coordinates of the arm joints**, which we then use to calculate the angles geometrically and control the servo’s rotation accordingly.
+
+**3️⃣ Interaction Input & Output:**
+> * **Input:** Web Camera (Camera feed capturing user’s upper-body movement. (via MediaPipe Pose))
+> * **Output:** Servo motors (Motors move to mimic user’s arm gesture.)
+>
+> **Trying with different output:** We plan to keep the same servo motor but change the position of its attachment (servo horn). In setup (A), the servo rotates around its center, while in setup (B), it is mounted at the base and drives a link from one end of the attachment. 
+>
+> ![image](images/partb1.jpg)
+> 
+> We will observe which setup is easier to implement and which one makes more sense.
+>
+>We ended up choosing **setup (C)**, where the servo is connected to the tip of one fan blade.
+The figure below shows an example of this setup (left), and the right image shows our initial arm prototype, which was too fragile and eventually broke.
+>
+><div style="display:flex; gap:2%; align-items:flex-start;">
+>  <img src="images/prototype.jpg" style="height:300px; object-fit:cover;" alt="Image 1"/>
+>  <img src="images/prototype2.jpg" style="height:300px; object-fit:cover;" alt="Image 2"/>
+></div>
+>
+> **Setup (C) design:**
+> ![image](images/setupc.png)
+
+
+**4️⃣ Experiment and Findings:**
+> 1. When running MediaPipe Pose, we found that it **starts detection from the face** — if no face is detected, the entire body skeleton cannot be identified.
+> 2. Once the full body is clearly visible, covering the face still allows the skeleton to be detected in some cases (though it may occasionally disappear).
+> 3. When the face is visible, every keypoint returns a value — **even for body parts that are not actually visible to the camera** (e.g., wrists outside the frame). This creates a difficult-to-handle error, since the model still outputs coordinates for invisible joints.
 
 ### Part C
 ### Test the interaction prototype
