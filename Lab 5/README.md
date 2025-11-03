@@ -267,10 +267,14 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
+[InitialTesting Video](https://drive.google.com/file/d/1xe-Ycy_xJDwAkDrmGmYguij1B5reEs9V/view?usp=sharing]
+
+Our observations
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 > At frst, users are likely not aware of the uncertainties of the system, such as it not working properly if their face or body parts are out of frame. However, since they can see the video and how their arm is being detected, they can quickly learn how to improve performance of the system by moving around until the model moves smoothly. 
-1. How bad would they be impacted by a miss classification?
+1. How bad would they be impacted by a miss classification)
 > A miss classification wouldn't be too terrible since it would only impact the model in the moment. The overall action would still show up fairly well. As long as there aren't too many miss classifications, the user would not be too affected. 
 1. How could change your interactive system to address this?
 > To improve the issues with uncertainties, we could try using a different pose recognition tool that doesn't require as much of the body to be in frame. Alternatively, when setting up the environment for the user, we could make a marker for where they need to stand so that the camera is able to capture their entire body without any potential for them going out of frame.
