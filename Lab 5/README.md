@@ -267,9 +267,14 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
-[InitialTesting Video](https://drive.google.com/file/d/1xe-Ycy_xJDwAkDrmGmYguij1B5reEs9V/view?usp=sharing]
+[Shreya Initial Testing Video](https://drive.google.com/file/d/1xe-Ycy_xJDwAkDrmGmYguij1B5reEs9V/view?usp=sharing)
 
-Our observations
+Our observations:
+> - When the user moves their arm slowly and steadily, the prototype seems to move along well with user's arm, however when the user speeds thier motions, the prototype has a harder time reflecting that movement. 
+> - The system works best when both arms are in frame and to do so, the user must be pretty far away from the camera and the prototype
+> - The prototype is a littly bulky and often the tape is not enough to keep the the components together. Often the second servo will come off the upperarm due to the tape not being strong enough
+> - Due to the servo's range of motion, a user has a limited range (from diagonally down to diagonally up for the upper arm and from straight to bent for the lower arm)
+
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
@@ -306,4 +311,10 @@ During the lecture, we mentioned questions to help characterize a material:
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
+Our code is located in pose.py in this repo
+> We implemented our code using the pose_landmarker_lite model as we found this to work best for our use case. 
+
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+Feedback
+> 
