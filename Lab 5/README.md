@@ -311,6 +311,36 @@ During the lecture, we mentioned questions to help characterize a material:
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
+During class, we gathered some thoughts and feedback from our classmates and the teaching assistants.
+> Special Thanks to TAs **Ruixiang "Albert" Han**, **Hauke Sandhaus** and students **Thomas Knoepffler** for giving us feedback.
+
+Below are their comments and several potential future applications they suggested:
+1. Smart home assistant – a robotic arm that can rotate and press buttons on smart appliances.
+2. Automatic pet companion – a device that can gently pet your animals when you’re away from home.
+3. Precision robotic hand – by increasing the number of nodes and servos, it could evolve into a highly precise, human-like robotic hand.
+4. Remote companion – a system that could act as a long-distance partner or friend, enabling emotional or physical interaction remotely.
+5. Shadow play performer – a setup that can manipulate a small puppet to create a digital version of traditional shadow puppetry.
+6. Robotic barista arm – a mechanical arm capable of performing delicate tasks, such as making coffee or other precise actions.
+
+We chose two concepts — the **automatic pet companion** and the **shadow play performer** — for further exploration through storyboard illustrations and conceptual design diagrams.
+
+![image](images/autopet.JPG)
+![images](images/shadowplay.JPG)
+
+---
+
+This week, we advanced from last week’s single-arm prototype to a two-arm version — and even added a body and face.
+
+Please see the **design diagram and prototype** below. 🤖✨
+
+<div style="display:flex; gap:2%; align-items:flex-start;">
+ <img src="images/demo12.png" style="height:300px; object-fit:cover;" alt="Image 1"/>
+ <img src="images/demo3.png" style="height:300px; object-fit:cover;" alt="Image 2"/>
+</div>
+
+![demo1](images/demo1.png)
+
+
 Our code is located in pose.py in this repo
 > We implemented our code using MediaPipe Pose, more specifically the pose_landmarker_lite model as we found this to work best for our use case, to track a user's arm movements from the camera then map the joint angles to the servo motor positions to follow the user's arm motions in real-time
 
