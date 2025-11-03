@@ -1,7 +1,9 @@
 # Observant Systems
 
-**NAMES OF COLLABORATORS HERE**
+**COLLABORATORS:**
+[Amanda Lu](https://github.com/amandazlu/Interactive-Lab-Hub/edit/Fall2025/Lab%205/README.md), [Miriam Alex](https://github.com/miriam-alex/Interactive-Lab-Hub/tree/Fall2025/Lab%205), [Ying Yu Chen](https://github.com/chenyingyu-main/Interactive-Lab-Hub/tree/Fall2025/Lab%205)  
 
+Main Repository is Shreya Kethi Reddy ^
 
 For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
 Your **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
@@ -41,6 +43,9 @@ D) [Reflect](#part-d)
 ### Part A
 ### Play with different sense-making algorithms.
 
+<details>
+<summary>Show Instructions</summary>
+  
 #### Pytorch for object recognition
 
 For this first demo, you will be using PyTorch and running a MobileNet v2 classification model in real time (30 fps+) on the CPU. We will be following steps adapted from [this tutorial](https://pytorch.org/tutorials/intermediate/realtime_rpi.html).
@@ -151,6 +156,24 @@ Teachable machines provides an audio classifier too. If you want to use audio cl
 
 In an earlier version of this class students experimented with foundational computer vision techniques such as face and flow detection. Techniques like these can be sufficient, more performant, and allow non discrete classification. Find the material here:
 [CV_optional/cv.md](CV_optional/cv.md).
+</details>
+
+#### Pytorch for object recognition
+
+#### MediaPipe
+[Video](https://drive.google.com/file/d/183Ai6g_7RC0FEAljpmUj8FI_ZzhLRPVS/view?usp=sharing)
+
+### Moondream
+
+#### Teachable Machines
+
+<img width="1156" height="889" alt="Screenshot 2025-10-22 at 4 52 26 PM" src="https://github.com/user-attachments/assets/9863ae12-1f25-4bbd-997a-7ea0413d7f29" />
+
+<img width="1105" height="858" alt="Screenshot 2025-10-22 at 4 53 30 PM" src="https://github.com/user-attachments/assets/aa7236e5-9071-47ae-bbbe-24dc0549e0dd" />
+
+<img width="1101" height="857" alt="Screenshot 2025-10-22 at 5 03 19 PM" src="https://github.com/user-attachments/assets/d98fa3f9-e1c0-4517-ad97-43d6c2b9b356" />
+
+[Video](https://drive.google.com/file/d/1M_-BlMXl1Mv6m4IyMjAdZQcgdLIAejxe/view?usp=sharing)
 
 ### Part B
 ### Construct a simple interaction.
@@ -174,9 +197,13 @@ For example:
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
+> At frst, users are likely not aware of the uncertainties of the system, such as it not working properly if their face or body parts are out of frame. However, since they can see the video and how their arm is being detected, they can quickly learn how to improve performance of the system by moving around until the model moves smoothly. 
 1. How bad would they be impacted by a miss classification?
+> A miss classification wouldn't be too terrible since it would only impact the model in the moment. The overall action would still show up fairly well. As long as there aren't too many miss classifications, the user would not be too affected. 
 1. How could change your interactive system to address this?
+> To improve the issues with uncertainties, we could try using a different pose recognition tool that doesn't require as much of the body to be in frame. Alternatively, when setting up the environment for the user, we could make a marker for where they need to stand so that the camera is able to capture their entire body without any potential for them going out of frame.
 1. Are there optimizations you can try to do on your sense-making algorithm.
+> A potential optimization we could try is to use a heavier version of MediaPipe to try and get more accuracy. However, it does not run as smoothly on our Raspberry Pi and has more delay in the video, so more fine tuning is required.
 
 ### Part D
 ### Characterize your own Observant system
@@ -184,12 +211,18 @@ For example:
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
+> Our system can be used for a variety of applications, such as modeling movements for a performance or gameplay, performing actions remotely, or as an interactive artwork. These applications are explored further in part 2.
 * What is a good environment for X?
+> A good environment is one where there is plenty of space for the user to stand and have their whole body in frame of the camera. Good lighting is also important.
 * What is a bad environment for X?
+> A bad environment is tight spaces, since the pose detection does not function well if it cannot see most of a users' body. Additionally if there is no light, then the sensor also will not work.
 * When will X break?
+> X will break in bad environments as described above
 * When it breaks how will X break?
+> When it breaks, our model will perform random movements as the detected poses are misclassified, or it will simply stop moving. 
 * What are other properties/behaviors of X?
 * How does X feel?
+> It feels pretty cool to watch the model arm follow your real-time movements, sort of mesmerizing. 
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
