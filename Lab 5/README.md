@@ -312,7 +312,7 @@ During the lecture, we mentioned questions to help characterize a material:
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 Our code is located in pose.py in this repo
-> We implemented our code using the pose_landmarker_lite model as we found this to work best for our use case. 
+> We implemented our code using MediaPipe Pose, more specifically the pose_landmarker_lite model as we found this to work best for our use case, to track a user's arm movements from the camera then map the joint angles to the servo motor positions to follow the user's arm motions in real-time
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
 [Finished Result](https://drive.google.com/file/d/1o0Ycdml96MYCBr1kI-ZU8dp1WC1mBWdv/view?usp=sharing)
