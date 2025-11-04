@@ -31,6 +31,12 @@ MQTT = lightweight messaging for IoT. Publish/subscribe model with central broke
 - **Topic**: Like `IDD/bedroom/temperature` (use `#` wildcard)
 - **Publish/Subscribe**: Send and receive messages
 
+**Install MQTT tools on your Pi:**
+```bash
+sudo apt-get update
+sudo apt-get install -y mosquitto-clients
+```
+
 **Test it:**
 **Subscribe to messages (listener):**
 ```bash
@@ -38,8 +44,8 @@ mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P "device
 ```
 
 **Publish a message (sender):**
+Copy this entire line:
 ```bash
-# Copy this entire line:
 mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/test/yourname" -m "Hello!" -u idd -P "device@theFarm"
 ```
 > **💡 Tip:** Replace `yourname` with your actual name in the topic!
