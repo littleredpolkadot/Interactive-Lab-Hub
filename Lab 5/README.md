@@ -6,10 +6,10 @@
 Main Repository is Shreya Kethi Reddy ^
 
 Contributions:
-Miriam: Created initial script using pose landmarker model, tracking parts of the body relevant to our project and converting them to easily parsable points. Helped laser cut and design parts of the device. Filmed prototype and edited interaction video
-Ying Yu: Storyboards, user interaction observation, documented findings, collected and summarized user feedback
-Amanda: Coding for both single and double arm prototype, helped laser cut and design parts of the device, helped with documenting findings
-Shreya: Designed, experimented with, and tested initial carboard prototype, worked on coding for double arm protype, and finalizing submission materials 
+- Miriam: Created initial script using pose landmarker model, tracking parts of the body relevant to our project and converting them to easily parsable points. Helped laser cut and design parts of the device. Filmed prototype and edited interaction video
+- Ying Yu: Storyboards, user interaction observation, documented findings, collected and summarized user feedback
+- Amanda: Coding for both single and double arm prototype, helped laser cut and design parts of the device, helped with documenting findings
+- Shreya: Designed, experimented with, and tested initial carboard prototype, worked on coding for double arm protype, and finalizing submission materials 
 
 For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
 Your **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
