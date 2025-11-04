@@ -38,17 +38,21 @@ sudo apt-get install -y mosquitto-clients
 ```
 
 **Test it:**
+
 **Subscribe to messages (listener):**
 ```bash
-mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P "device@theFarm"
+mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P 'device@theFarm'
 ```
 
 **Publish a message (sender):**
-Copy this entire line:
 ```bash
-mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/test/yourname" -m "Hello!" -u idd -P "device@theFarm"
+mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/test/yourname" -m "Hello!" -u idd -P 'device@theFarm'
 ```
-> **💡 Tip:** Replace `yourname` with your actual name in the topic!
+
+> **💡 Tips:** 
+> - Replace `yourname` with your actual name in the topic
+> - **Important:** Use single quotes `'device@theFarm'` around the password (not double quotes)
+> - Or set password as variable first: `export MQTT_PASS='device@theFarm'` then use `-P "$MQTT_PASS"`
 
 **🔧 Debug Tool:** View all MQTT messages in real-time at `http://farlab.infosci.cornell.edu:5001`
 
