@@ -39,11 +39,8 @@ mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P "device
 
 **Publish a message (sender):**
 ```bash
-mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 \
-  -t "IDD/test/yourname" \
-  -m "Hello!" \
-  -u idd \
-  -P "device@theFarm"
+# Copy this entire line:
+mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/test/yourname" -m "Hello!" -u idd -P "device@theFarm"
 ```
 > **💡 Tip:** Replace `yourname` with your actual name in the topic!
 
