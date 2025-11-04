@@ -72,7 +72,7 @@ Each Pi = one pixel, controlled by RGB sensor, displayed in real-time grid.
 1. **Sensor**
 
 #### Light/Proximity/Gesture sensor (APDS-9960)
-We uses this sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595) for this exmaple to detect light (also RGB)
+We use this sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595) for this exmaple to detect light (also RGB)
  
 <img src="https://cdn-shop.adafruit.com/970x728/3595-06.jpg" width=200>
 
