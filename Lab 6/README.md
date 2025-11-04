@@ -199,6 +199,19 @@ mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P "device
 
 **Pi venv:** Make sure to activate: `source .venv/bin/activate`
 
+**Stop Screen service (make your screen available again):**
+```bash
+# stop the screen service
+sudo systemctl stop piscreen.service
+```
+
+if you want to restart the screen service
+```bash
+# start the screen service
+sudo systemctl start piscreen.service
+```
+
+
 ---
 
 ## Submission Checklist
