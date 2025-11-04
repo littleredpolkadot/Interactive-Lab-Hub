@@ -69,7 +69,16 @@ Each Pi = one pixel, controlled by RGB sensor, displayed in real-time grid.
 
 **Setup:**
 
-1. **Server** (one person on laptop):
+1. **Sensor**
+
+#### Light/Proximity/Gesture sensor (APDS-9960)
+We uses this sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595) for this exmaple to detect light (also RGB)
+ 
+<img src="https://cdn-shop.adafruit.com/970x728/3595-06.jpg" width=200>
+
+Connect it to your pi with Qwiic connector
+ 
+2. **Server** (one person on laptop):
 ```bash
 cd "Lab 6"  
 source .venv/bin/activate
