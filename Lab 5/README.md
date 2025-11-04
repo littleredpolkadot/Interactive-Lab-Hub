@@ -247,7 +247,7 @@ In an earlier version of this class students experimented with foundational comp
 > We will observe which setup is easier to implement and which one makes more sense.
 >
 >We ended up choosing **setup (B)**, where the servo is connected to the tip of one fan blade.
-The figure below shows an example of this setup (left), and the right image shows our initial arm prototype, which was too fragile and eventually broke.
+The figure below shows an example of this setup (left), and the right image shows our initial prototype in setup (A), which was too limited in its range of motion and more complicated to set up.
 >
 ><div style="display:flex; gap:2%; align-items:flex-start;">
 >  <img src="images/prototype.jpg" style="height:300px; object-fit:cover;" alt="Image 1"/>
