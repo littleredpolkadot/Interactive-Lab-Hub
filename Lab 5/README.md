@@ -254,7 +254,7 @@ The figure below shows an example of this setup (left), and the right image show
 >  <img src="images/prototype2.jpg" style="height:300px; object-fit:cover;" alt="Image 2"/>
 ></div>
 >
-> **Setup (B) design:**
+> **Setup (B) design on the left and Setup (A) design on the right:**
 > ![image](images/setupc.png)
 
 
