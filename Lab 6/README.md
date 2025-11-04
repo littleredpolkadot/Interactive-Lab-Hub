@@ -80,9 +80,8 @@ Connect it to your pi with Qwiic connector
 
 
 <img src="imgs/IMG_0270.jpg" height="200" />
-We need to use the screen to display the color detection, so we need to stop the running piscreen.service
+We need to use the screen to display the color detection, so we need to stop the running piscreen.service to make your screen available again
 
-**Stop Screen service (make your screen available again):**
 ```bash
 # stop the screen service
 sudo systemctl stop piscreen.service
