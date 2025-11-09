@@ -23,7 +23,7 @@ Build interactive systems where **multiple devices communicate over a network** 
 ---
 
 ## Part A: MQTT Messaging
-
+<details>
 MQTT = lightweight messaging for IoT. Publish/subscribe model with central broker.
 
 **Concepts:**
@@ -57,12 +57,15 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 
 ![MQTT Explorer showing messages](imgs/MQTT-explorer.png)
 
+</details>
+
 **💡 Brainstorm 5 ideas for messaging between devices**
 
 ---
 
 ## Part B: Collaborative Pixel Grid
 
+<details>
 Each Pi = one pixel, controlled by RGB sensor, displayed in real-time grid.
 
 **Architecture:** `Pi (sensor) → MQTT → Server → Web Browser`
@@ -121,6 +124,8 @@ Hold colored objects near sensor to change your pixel!
 
 ![Pixel grid with two devices](imgs/two-devices-grid.png)
 
+</details>
+
 **📸 Include: Screenshot of grid + photo of your Pi setup**
 
 ---
@@ -153,7 +158,13 @@ Hold colored objects near sensor to change your pixel!
 Replace this README with your documentation:
 
 **1. Project Description**
-- What does it do? Why interesting? User experience?
+- What does it do? Why interesting? User experience
+> The project is the detection of coordination from three different sensors on different pis which serves as the foundation for oour multiplayer cooking-themed rhythm game. Each Pi represents a different player's kitchen utensil whcih are the following:
+> - A "knife/cutting-board" where a user must chops on specific places on a board
+> - A "mixing bowl" where a user use a dowel to mix around the bowl at a certain speed
+> - A "pan" where a user has to both manage the heat of the stove and when the take the pan off the heat
+> It's interesting since it is the basis of a synchronized collaborative physical cooking experiencethat is both great as a game-mechanic as well as an experience to uniquely collaborate through the cooking motions.
+> Upon the synchronizatin of the physical actions (when the "knife" hits the board, "mixing bowl" is strirred, and the "pan" stove is off and "pan" is off the sove all at the same time, the system plays a victory sound)  
 
 **2. Architecture Diagram**
 - Hardware, connections, data flow
